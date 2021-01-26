@@ -6,7 +6,8 @@ const initialState = {
   name: 'Name',
   currentQuestion: 0,
   questionAnswered: false,
-  lastAnswerCorrect: false
+  lastAnswerCorrect: false,
+  questionResult: false
 };
 
 const reducer = ( state = initialState, action ) => {
@@ -38,11 +39,10 @@ const reducer = ( state = initialState, action ) => {
             questionAnswered: false
           }
           case actionTypes.SETQUESTIONANSWERED:
-            console.log(action)
             return {
               ...state,
               questionAnswered: true,
-              lastAnswerCorrect: true
+              lastAnswerCorrect: action.value
             }
         default:
           return state;

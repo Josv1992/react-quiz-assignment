@@ -10,7 +10,7 @@ export const Quiz = () => {
   const name = useSelector(state => state.str.name);
   const currentQuestion = useSelector(state => state.str.currentQuestion);
   const questionAnswered = useSelector(state => state.str.questionAnswered);
-  const answeredCorrectly = useSelector(state => state.str.answeredCorrectly);
+  const answeredCorrectly = useSelector(state => state.str.lastAnswerCorrect);
   const dispatch = useDispatch();
 
 
@@ -22,7 +22,6 @@ export const Quiz = () => {
       setQuestionAnswered(false);
     }
   }
-
 
   const setQuestionAnswered = useCallback((bool) => dispatch({type: 'SETQUESTIONANSWERED', value: bool}),
     [dispatch]
@@ -91,7 +90,7 @@ const mapStateToProps = state => {
   return {
     counter: state.score,
     currentQuestion: state.currentQuestion,
-    answeredCorrectly: state.answeredCorrectly
+    answeredCorrectly: state.lastAnswerCorrect
   }
 }
 
