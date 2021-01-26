@@ -2,8 +2,6 @@ import React, { useState, useCallback } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import * as actionTypes from './../store/actionTypes';
 import { Form } from "../components/Form/Form";
-import { Debug } from "./Debug";
-
 export const FormValidation = ({ initialValues, validate }) => {
   const [values, setValues] = useState(initialValues);
 
@@ -108,7 +106,6 @@ export const FormValidation = ({ initialValues, validate }) => {
         touched={touched}
         values={values}
       />
-      <Debug values={values} errors={errors} touched={touched} />
     </>
   );
 }

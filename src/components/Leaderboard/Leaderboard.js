@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 
 import firebase from './../../firebase';
 
@@ -34,8 +35,15 @@ const useScores = (sortBy = 'SCORE_DESC') => {
 }
 
 export const Leaderboard = () => {
-  const [sortBy, setSortBy] = useState('SCORE_DESC')
-  const scores = useScores(sortBy)
+  const dispatch = useDispatch();
+  const [sortBy, setSortBy] = useState('SCORE_DESC');
+  const scores = useScores(sortBy);
+
+  const returnToStart = useCallback(
+    () => dispatch({type: 'RESETGAME'}),
+    [dispatch],
+  )
+
   return (
     <div>
       <h1>Leaderboard:</h1>
@@ -59,6 +67,7 @@ export const Leaderboard = () => {
           </li>
         )}
       </ol>
+      <button onClick={returnToStart}>Return</button>
     </div>
   )
 }

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 
 import firebase from '../../firebase';
 
-
-
 export const ScoreForm = ({name, score}) => {
+  const dispatch = useDispatch();
 
   function onSubmit(e) {
     e.preventDefault();
@@ -16,9 +16,14 @@ export const ScoreForm = ({name, score}) => {
         name,
         score
       })
-
-      // TODO: Go to leaderboard
+      
+      goToLeaderboard();
   }
+
+  const goToLeaderboard = useCallback(
+    () => dispatch({type: 'SETGAMESTATE', value: 3}),
+    [dispatch],
+  )
 
   return (
     <form onSubmit={onSubmit}>

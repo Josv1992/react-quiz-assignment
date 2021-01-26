@@ -9,9 +9,16 @@ import { createStore, combineReducers } from 'redux';
 
 import storeReducer from './store/reducers/store';
 
-const rootReducer = combineReducers({
+const appReducer = combineReducers({
   str: storeReducer
 });
+
+const rootReducer = (state, action) => {
+  if (action.type === 'RESETGAME') {
+    state = undefined;
+  }
+  return appReducer(state, action)
+}
 
 const store = createStore(rootReducer);
 

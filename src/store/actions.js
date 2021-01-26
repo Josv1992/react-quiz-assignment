@@ -38,3 +38,8 @@ export const setQuestionAnswered = content => ({
   type: Types.SETQUESTIONANSWERED,
   payload:  content.value
 });
+
+export const resetGame = content => ({
+  type: Types.RESETGAME,
+  payload: content.value
+})
