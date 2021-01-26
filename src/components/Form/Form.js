@@ -15,20 +15,20 @@ export const Form = ({
       </div>
       <form onSubmit={HandleSubmit} autoComplete="off">
         <div className="form-group">
-          <label htmlFor="first-name-input">
+          <label htmlFor="name-input">
             Name 
             <input
               type="text"
               className="form-control"
-              id="first-name-input"
-              placeholder="Enter first name"
-              value={values.firstName}
+              id="name-input"
+              placeholder="Enter name"
+              value={values.name}
               onChange={handleChange}
               onBlur={handleBlur}
-              name="firstName"
+              name="name"
               required
             />
-            {touched.firstName && errors.firstName}
+            {touched.name && errors.name}
           </label>
         </div>
         <div className="form-group">

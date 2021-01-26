@@ -3,15 +3,17 @@ import * as actionTypes from '../actionTypes';
 const initialState = {
   score: 0,
   gameState: 0,
-  name: 'Name'
+  name: 'Name',
+  currentQuestion: 0
 };
 
 const reducer = ( state = initialState, action ) => {
     switch ( action.type ) {
-        case actionTypes.INCREMENT:
-          const newState = Object.assign({}, state);
-          newState.score = state.score + 1;
-          return newState;
+        case actionTypes.INCREMENTSCORE:
+          return {
+            ...state,
+            score: ++action.value
+        }
         case actionTypes.SETGAMESTATE:
           return {
               ...state,
@@ -27,8 +29,14 @@ const reducer = ( state = initialState, action ) => {
             ...state,
             name: action.value
           }
+        case actionTypes.NEXTQUESTION:
+          return {
+            ...state,
+            currentQuestion: ++action.value
+          }
+        default:
+          return state;
     }
-    return state;
 };
 
 export default reducer;

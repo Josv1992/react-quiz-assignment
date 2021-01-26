@@ -1,5 +1,6 @@
-export const INCREMENT = 'INCREMENT';
+export const INCREMENTSCORE = 'INCREMENTSCORE';
 export const RESETSCORE = 'RESETSCORE';
 export const SETNAME = 'SETNAME';
 export const RESETNAME = 'RESETNAME';
 export const SETGAMESTATE = 'SETGAMESTATE';
+export const NEXTQUESTION = 'NEXTQUESTION'

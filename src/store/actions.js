@@ -1,33 +1,35 @@
-import { INCREMENT, RESETSCORE, SETNAME, SETGAMESTATE } from "./actionTypes";
+import * as Types from "./actionTypes"; // TODO: Improve imports
 
 
 export const addScore = content => ({
-  type: INCREMENT,
-  payload: {
-    score: +1,
-    content
-  }
+  type: Types.INCREMENTSCORE,
+  payload: ++content
 });
 
 export const resetScore = () => ({
-  type: RESETSCORE,
+  type: Types.RESETSCORE,
   payload: {
     score: 0
   }
 });
 
 export const setName = content => ({
-  type: SETNAME,
+  type: Types.SETNAME,
   payload: {
-    name: content.firstName,
+    name: content.name,
     content
   }
 });
 
 export const setGameState = content => ({
-  type: SETGAMESTATE,
+  type: Types.SETGAMESTATE,
   payload: {
     value: content.value,
     content
   }
+});
+
+export const nextQuestion = content => ({
+  type: Types.NEXTQUESTION,
+  payload: ++content
 });

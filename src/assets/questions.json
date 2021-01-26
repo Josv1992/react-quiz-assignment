@@ -1,0 +1,89 @@
+{
+  "questions":[
+     {
+        "questionText":"Wat is mijn naam?",
+        "answerOptions":[
+           {
+              "answerText":"Jos van der Meulen",
+              "isCorrect":false
+           },
+           {
+              "answerText":"Jos Vermeulen",
+              "isCorrect":true
+           },
+           {
+              "answerText":"Henk Henkson",
+              "isCorrect":false
+           }
+        ]
+     },
+     {
+        "questionText":"Wat is mijn lievelingskleur?",
+        "answerOptions":[
+           {
+              "answerText":"Rood",
+              "isCorrect":false
+           },
+           {
+              "answerText":"Groen",
+              "isCorrect":false
+           },
+           {
+              "answerText":"Blauw",
+              "isCorrect":true
+           }
+        ]
+     },
+     {
+        "questionText":"Wat is mijn lievelingseten?",
+        "answerOptions":[
+           {
+              "answerText":"Pizza",
+              "isCorrect":true
+           },
+           {
+              "answerText":"Cheeseburgers",
+              "isCorrect":false
+           },
+           {
+              "answerText":"Spareribs",
+              "isCorrect":false
+           }
+        ]
+     },
+     {
+        "questionText":"Wat is mijn favoriete muziekstijl?",
+        "answerOptions":[
+           {
+              "answerText":"Indie Rock",
+              "isCorrect":false
+           },
+           {
+              "answerText":"Hardstyle",
+              "isCorrect":true
+           },
+           {
+              "answerText":"Techno",
+              "isCorrect":false
+           }
+        ]
+     },
+     {
+        "questionText":"Wat is mijn favoriete Game franchise?",
+        "answerOptions":[
+           {
+              "answerText":"Super Mario",
+              "isCorrect":false
+           },
+           {
+              "answerText":"Command & Conquer",
+              "isCorrect":false
+           },
+           {
+              "answerText":"Jos kan niet kiezen",
+              "isCorrect":true
+           }
+        ]
+     }
+  ]
+}

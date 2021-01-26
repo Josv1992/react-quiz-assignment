@@ -1,15 +1,15 @@
 import React, { useState, useCallback } from 'react';
-import { connect, useSelector, useDispatch } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import * as actionTypes from './../store/actionTypes';
 import { Form } from "../components/Form/Form";
 import { Debug } from "./Debug";
 
 export const FormValidation = ({ initialValues, validate }) => {
-  const [values, setValues] = React.useState(initialValues);
+  const [values, setValues] = useState(initialValues);
 
-  const [errors, setErrors] = React.useState({});
+  const [errors, setErrors] = useState({});
 
-  const [touched, setTouched] = React.useState({});
+  const [touched, setTouched] = useState({});
 
   const dispatch = useDispatch();
 
@@ -81,10 +81,10 @@ export const FormValidation = ({ initialValues, validate }) => {
     if (
       !Object.values(formValidation.errors).length && // errors object is empty
       Object.values(formValidation.touched).length ===
-        Object.values(values).length && // all fields were touched
+      Object.values(values).length && // all fields were touched
       Object.values(formValidation.touched).every(t => t === true) // every touched field is true
     ) {
-      setName(values['firstName']);
+      setName(values['name']);
       setGameState(1);
       alert(JSON.stringify(values, null, 2));
 
@@ -117,7 +117,7 @@ export const FormValidation = ({ initialValues, validate }) => {
 
 const mapStateToProps = state => {
   return {
-    counter: state.score,
+    name: state.name,
   }
 }
 

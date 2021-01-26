@@ -6,10 +6,10 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 
-import scoreReducer from './store/reducers/score';
+import storeReducer from './store/reducers/store';
 
 const rootReducer = combineReducers({
-  scr: scoreReducer
+  str: storeReducer
 });
 
 const store = createStore(rootReducer);

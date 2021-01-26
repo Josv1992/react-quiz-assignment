@@ -19,11 +19,11 @@ export const Welcome = () => {
   };
 
   const validate = {
-    firstName: name => nameValidation("First Name", name)
+    name: name => nameValidation("Name", name)
   };
 
   const initialValues = {
-    firstName: "Name"
+    name: "Name"
   };
 
   return (
