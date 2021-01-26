@@ -1,6 +1,5 @@
 import React from 'react';
-import { useStore, useSelector } from 'react-redux';
-
+import { useSelector } from 'react-redux';
 
 import { Welcome } from '../../components/Welcome/Welcome';
 import { Quiz } from '../../components/Quiz/Quiz';
@@ -9,10 +8,8 @@ import { Leaderboard } from '../../components/Leaderboard/Leaderboard';
 
 export const QuizContainer = () => {
 
-  const store = useStore();
-  const gameState = useSelector(state => state.str.gameState);
-  const score = useSelector(state => state.str.score);
-  const name = useSelector(state => state.str.name)
+  const gameState = useSelector(state => state.gReducer.gameState);
+  const score = useSelector(state => state.pReducer.score);
 
 
   const ComponentToggler = () => {

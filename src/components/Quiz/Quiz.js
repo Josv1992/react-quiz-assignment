@@ -6,11 +6,11 @@ import questionsData from './../../assets/questions.json';
 
 export const Quiz = () => {
   const questions = questionsData["questions"];
-  const score = useSelector(state => state.str.score);
-  const name = useSelector(state => state.str.name);
-  const currentQuestion = useSelector(state => state.str.currentQuestion);
-  const questionAnswered = useSelector(state => state.str.questionAnswered);
-  const answeredCorrectly = useSelector(state => state.str.lastAnswerCorrect);
+  const score = useSelector(state => state.pReducer.score);
+  const name = useSelector(state => state.pReducer.name);
+  const currentQuestion = useSelector(state => state.gReducer.currentQuestion);
+  const questionAnswered = useSelector(state => state.gReducer.questionAnswered);
+  const answeredCorrectly = useSelector(state => state.gReducer.lastAnswerCorrect);
   const dispatch = useDispatch();
 
 
@@ -23,12 +23,12 @@ export const Quiz = () => {
     }
   }
 
-  const setQuestionAnswered = useCallback((bool) => dispatch({type: 'SETQUESTIONANSWERED', value: bool}),
+  const setQuestionAnswered = useCallback((bool) => dispatch({type: 'SET_QUESTION_ANSWERED', value: bool}),
     [dispatch]
   )
 
   const incrementScore = useCallback(
-    () => dispatch({type: 'INCREMENTSCORE', value: score}),
+    () => dispatch({type: 'INCREMENT_SCORE', value: 1}),
     [dispatch],
   )
 
@@ -41,12 +41,12 @@ export const Quiz = () => {
   }
 
   const endQuiz = useCallback(
-    () => dispatch({type: 'SETGAMESTATE', value: 2}),
+    () => dispatch({type: 'SET_GAMESTATE', value: 2}),
     [dispatch],
   )
 
   const nextQuestion = useCallback(
-    () => dispatch({type: 'NEXTQUESTION', value: currentQuestion + 1}),
+    () => dispatch({type: 'NEXT_QUESTION', value: 1}),
     [dispatch],
   )
 
@@ -109,9 +109,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-      onIncrementScore: () => dispatch({type: actionTypes.INCREMENTSCORE}),
-      onNextQuestion: () => dispatch({type: actionTypes.NEXTQUESTION}),
-      onSetQuestionAnswered: () => dispatch({type: actionTypes.SETQUESTIONANSWERED})
+      onIncrementScore: () => dispatch({type: actionTypes.INCREMENT_SCORE}),
+      onNextQuestion: () => dispatch({type: actionTypes.NEXT_QUESTION}),
+      onSetQuestionAnswered: () => dispatch({type: actionTypes.SET_QUESTION_ANSWERED})
   }
 };
 

@@ -7,14 +7,16 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 
 
-import storeReducer from './store/reducers/store';
+import playerInfoReducer from './store/reducers/playerInfoReducer';
+import gameStateReducer from './store/reducers/gameStateReducer';
 
 const appReducer = combineReducers({
-  str: storeReducer
+  pReducer: playerInfoReducer,
+  gReducer: gameStateReducer
 });
 
 const rootReducer = (state, action) => {
-  if (action.type === 'RESETGAME') {
+  if (action.type === 'RESET_GAME') {
     state = undefined;
   }
   return appReducer(state, action)

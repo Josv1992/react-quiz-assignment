@@ -21,7 +21,7 @@ export const ScoreForm = ({name, score}) => {
   }
 
   const goToLeaderboard = useCallback(
-    () => dispatch({type: 'SETGAMESTATE', value: 3}),
+    () => dispatch({type: 'SET_GAMESTATE', value: 3}),
     [dispatch],
   )
 

@@ -2,13 +2,11 @@ import React, { useState, useCallback } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import * as actionTypes from './../store/actionTypes';
 import { Form } from "../components/Form/Form";
+
 export const FormValidation = ({ initialValues, validate }) => {
   const [values, setValues] = useState(initialValues);
-
   const [errors, setErrors] = useState({});
-
   const [touched, setTouched] = useState({});
-
   const dispatch = useDispatch();
 
 
@@ -87,12 +85,12 @@ export const FormValidation = ({ initialValues, validate }) => {
     }
   };
   const setName = useCallback(
-    (name) => dispatch({type: 'SETNAME', value: name}),
+    (name) => dispatch({type: 'SET_NAME', value: name}),
     [dispatch],
   )
 
   const setGameState = useCallback(
-    () => dispatch({type: 'SETGAMESTATE', value: 1}),
+    () => dispatch({type: 'SET_GAMESTATE', value: 1}),
     [dispatch],
   )
 
@@ -118,8 +116,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-      onSetName: () => dispatch({type: actionTypes.SETNAME}),
-      onSetGameState: () => dispatch({type: actionTypes.SETGAMESTATE})
+      onSetName: () => dispatch({type: actionTypes.SET_NAME}),
+      onSetGameState: () => dispatch({type: actionTypes.SET_GAMESTATE})
   }
 };
 

@@ -40,7 +40,7 @@ export const Leaderboard = () => {
   const scores = useScores(sortBy);
 
   const returnToStart = useCallback(
-    () => dispatch({type: 'RESETGAME'}),
+    () => dispatch({type: 'RESET_GAME'}),
     [dispatch],
   )
 

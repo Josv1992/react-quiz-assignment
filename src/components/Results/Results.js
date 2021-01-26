@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ScoreForm } from './../ScoreForm/ScoreForm';
 
 export const Results = () => {
   const dispatch = useDispatch();
-  const score = useSelector(state => state.str.score);
-  const name = useSelector(state => state.str.name);
+  const score = useSelector(state => state.pReducer.score);
+  const name = useSelector(state => state.pReducer.name);
 
   const returnToStart = useCallback(
-    () => dispatch({type: 'RESETGAME'}),
+    () => dispatch({type: 'RESET_GAME'}),
     [dispatch],
   )
 

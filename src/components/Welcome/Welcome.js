@@ -1,28 +1,16 @@
 import React from 'react';
 
-import { FormValidation } from '../../services/FormValidation'
+import { FormValidation } from '../../services/FormValidation';
+import { nameValidator } from '../../services/nameValidator';
 
 
 export const Welcome = () => {
-  const nameValidation = (fieldName, fieldValue) => {
-    if (fieldValue.trim() === "") {
-      return `${fieldName} is required`;
-    }
-    if (/[^a-zA-Z -]/.test(fieldValue)) {
-      return "Invalid characters";
-    }
-    if (fieldValue.trim().length < 3) {
-      return `${fieldName} needs to be at least three characters`;
-    }
-    return null;
-  };
-
   const validate = {
-    name: name => nameValidation("Name", name)
+    name: name => nameValidator("Name", name)
   };
 
   const initialValues = {
-    name: "Name"
+    name: ""
   };
 
   return (

@@ -2,19 +2,19 @@ import * as Types from "./actionTypes";
 
 
 export const addScore = content => ({
-  type: Types.INCREMENTSCORE,
+  type: Types.INCREMENT_SCORE,
   payload: ++content
 });
 
 export const resetScore = () => ({
-  type: Types.RESETSCORE,
+  type: Types.RESET_SCORE,
   payload: {
     score: 0
   }
 });
 
 export const setName = content => ({
-  type: Types.SETNAME,
+  type: Types.SET_NAME,
   payload: {
     name: content.name,
     content
@@ -22,7 +22,7 @@ export const setName = content => ({
 });
 
 export const setGameState = content => ({
-  type: Types.SETGAMESTATE,
+  type: Types.SET_GAMESTATE,
   payload: {
     value: content.value,
     content
@@ -30,16 +30,16 @@ export const setGameState = content => ({
 });
 
 export const nextQuestion = content => ({
-  type: Types.NEXTQUESTION,
+  type: Types.NEXT_QUESTION,
   payload: content
 });
 
 export const setQuestionAnswered = content => ({
-  type: Types.SETQUESTIONANSWERED,
+  type: Types.SET_QUESTION_ANSWERED,
   payload:  content.value
 });
 
 export const resetGame = content => ({
-  type: Types.RESETGAME,
+  type: Types.RESET_GAME,
   payload: content.value
 })
