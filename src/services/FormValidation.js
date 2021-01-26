@@ -86,8 +86,6 @@ export const FormValidation = ({ initialValues, validate }) => {
     ) {
       setName(values['name']);
       setGameState(1);
-      alert(JSON.stringify(values, null, 2));
-
     }
   };
   const setName = useCallback(

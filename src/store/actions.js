@@ -1,4 +1,4 @@
-import * as Types from "./actionTypes"; // TODO: Improve imports
+import * as Types from "./actionTypes";
 
 
 export const addScore = content => ({
@@ -32,4 +32,9 @@ export const setGameState = content => ({
 export const nextQuestion = content => ({
   type: Types.NEXTQUESTION,
   payload: ++content
+});
+
+export const setQuestionAnswered = content => ({
+  type: Types.SETQUESTIONANSWERED,
+  payload:  content.value
 });

@@ -4,7 +4,9 @@ const initialState = {
   score: 0,
   gameState: 0,
   name: 'Name',
-  currentQuestion: 0
+  currentQuestion: 0,
+  questionAnswered: false,
+  lastAnswerCorrect: false
 };
 
 const reducer = ( state = initialState, action ) => {
@@ -32,8 +34,16 @@ const reducer = ( state = initialState, action ) => {
         case actionTypes.NEXTQUESTION:
           return {
             ...state,
-            currentQuestion: ++action.value
+            currentQuestion: ++action.value,
+            questionAnswered: false
           }
+          case actionTypes.SETQUESTIONANSWERED:
+            console.log(action)
+            return {
+              ...state,
+              questionAnswered: true,
+              lastAnswerCorrect: true
+            }
         default:
           return state;
     }
