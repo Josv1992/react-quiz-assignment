@@ -1,4 +1,5 @@
 import React from 'react';
+import './Welcome.css';
 
 import { FormValidation } from '../../services/FormValidation';
 import { nameValidator } from '../../services/nameValidator';

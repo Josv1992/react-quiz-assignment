@@ -5,8 +5,8 @@ export const nameValidator = (fieldName, fieldValue) => {
   if (/[^a-zA-Z -]/.test(fieldValue)) {
     return "Invalid characters";
   }
-  if (fieldValue.trim().length < 3) {
-    return `${fieldName} needs to be at least three characters`;
+  if (fieldValue.trim().length < 2) {
+    return `${fieldName} needs to be at least two characters`;
   }
   return null;
 };

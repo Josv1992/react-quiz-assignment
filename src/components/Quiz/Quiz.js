@@ -34,7 +34,6 @@ export const Quiz = () => {
 
   const nextButtonLogic = () => {
     if (currentQuestion + 1 === questions.length) {
-      console.log('Quiz voorbij');
       endQuiz();
     }
     nextQuestion();
@@ -61,7 +60,7 @@ export const Quiz = () => {
   const AnswerResult = () => {
     if (questionAnswered) {
       if (answeredCorrectly) {
-        return <h1>Well done!</h1>
+        return <h1>Correct answer!</h1>
       } else {
         return <h1>Wrong answer</h1>
       }

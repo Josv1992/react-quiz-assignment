@@ -5,6 +5,7 @@ import firebase from '../../firebase';
 
 export const ScoreForm = ({name, score}) => {
   const dispatch = useDispatch();
+  name = name.trim();
 
   function onSubmit(e) {
     e.preventDefault();

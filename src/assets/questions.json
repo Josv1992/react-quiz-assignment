@@ -1,7 +1,7 @@
 {
   "questions":[
      {
-        "questionText":"Wat is mijn naam?",
+        "questionText":"What is my name?",
         "answerOptions":[
            {
               "answerText":"Jos van der Meulen",
@@ -12,30 +12,30 @@
               "isCorrect":true
            },
            {
-              "answerText":"Henk Henkson",
+              "answerText":"Jos Brink",
               "isCorrect":false
            }
         ]
      },
      {
-        "questionText":"Wat is mijn lievelingskleur?",
+        "questionText":"What is my favourite colour?",
         "answerOptions":[
            {
-              "answerText":"Rood",
+              "answerText":"Red",
               "isCorrect":false
            },
            {
-              "answerText":"Groen",
+              "answerText":"Green",
               "isCorrect":false
            },
            {
-              "answerText":"Blauw",
+              "answerText":"Blue",
               "isCorrect":true
            }
         ]
      },
      {
-        "questionText":"Wat is mijn lievelingseten?",
+        "questionText":"What is my favourite food?",
         "answerOptions":[
            {
               "answerText":"Pizza",
@@ -46,13 +46,13 @@
               "isCorrect":false
            },
            {
-              "answerText":"Spareribs",
+              "answerText":"Spare Ribs",
               "isCorrect":false
            }
         ]
      },
      {
-        "questionText":"Wat is mijn favoriete muziekstijl?",
+        "questionText":"What is my favourite music style?",
         "answerOptions":[
            {
               "answerText":"Indie Rock",
@@ -69,7 +69,7 @@
         ]
      },
      {
-        "questionText":"Wat is mijn favoriete Game franchise?",
+        "questionText":"What is my favourite video game franchise?",
         "answerOptions":[
            {
               "answerText":"Super Mario",
@@ -80,7 +80,7 @@
               "isCorrect":false
            },
            {
-              "answerText":"Jos kan niet kiezen",
+              "answerText":"I can't choose",
               "isCorrect":true
            }
         ]

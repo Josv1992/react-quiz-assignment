@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
+import './Leaderboard.css';
+
 
 import firebase from './../../firebase';
 
@@ -45,28 +47,38 @@ export const Leaderboard = () => {
   )
 
   return (
-    <div>
+    <div className="leaderBoard">
       <h1>Leaderboard:</h1>
       <div>
         <label>Sort By:</label>{' '}
         <select value={sortBy} onChange={e => setSortBy(e.currentTarget.value)}>
-          <option value="SCORE_DESC">Score</option>
-          <option value="SCORE_ASC">Score</option>
+          <option value="SCORE_DESC">Score (descending)</option>
+          <option value="SCORE_ASC">Score (ascending)</option>
           <option disabled>---</option>
           <option value="NAME_ASC">Name(a-z)</option>
           <option value="NAME_DESC">Name(z-a)</option>
         </select>
       </div>
-      <ol>
-        {scores.map((score) =>
-          <li key={score.id}>
-            <div className='name-entry'>
-              <span>{score.name}</span>
-              <span className='score'>{score.score}</span>
-            </div>
-          </li>
-        )}
-      </ol>
+      <table className="score-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          {scores.map((score) =>
+          <tr key={score.id} className="score-table-item">
+              <td className='name-value'>
+                {score.name}
+              </td>
+              <td className='score-value'>
+                {score.score}
+              </td>
+          </tr>
+          )}
+        </tbody>
+      </table>
       <button onClick={returnToStart}>Return</button>
     </div>
   )

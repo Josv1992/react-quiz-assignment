@@ -81,7 +81,7 @@ export const FormValidation = ({ initialValues, validate }) => {
       Object.values(formValidation.touched).every(t => t === true) // every touched field is true
     ) {
       setName(values['name']);
-      setGameState(1);
+      setGameState();
     }
   };
   const setName = useCallback(

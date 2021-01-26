@@ -1,0 +1,23 @@
+
+.score-table {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 500px;
+}
+.score-table td, .score-table th {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+.score-table tr:nth-child(even){background-color: #f2f2f2;}
+
+.score-table tr:hover {background-color: #ddd;}
+
+.score-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #008CBA;
+  color: white;
+}
