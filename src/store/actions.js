@@ -31,7 +31,7 @@ export const setGameState = content => ({
 
 export const nextQuestion = content => ({
   type: Types.NEXTQUESTION,
-  payload: ++content
+  payload: content
 });
 
 export const setQuestionAnswered = content => ({

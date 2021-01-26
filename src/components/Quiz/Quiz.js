@@ -32,14 +32,27 @@ export const Quiz = () => {
     [dispatch],
   )
 
+  const nextButtonLogic = () => {
+    if (currentQuestion + 1 === questions.length) {
+      console.log('Quiz voorbij');
+      endQuiz();
+    }
+    nextQuestion();
+  }
+
+  const endQuiz = useCallback(
+    () => dispatch({type: 'SETGAMESTATE', value: 2}),
+    [dispatch],
+  )
+
   const nextQuestion = useCallback(
-    () => dispatch({type: 'NEXTQUESTION', value: currentQuestion}),
+    () => dispatch({type: 'NEXTQUESTION', value: currentQuestion + 1}),
     [dispatch],
   )
 
   const NextButton = () => {
     if (questionAnswered) {
-      return <button onClick={() => nextQuestion()}>Next</button>
+      return <button onClick={() => nextButtonLogic()}>Next</button>
     } else {
       return <></>;
     }

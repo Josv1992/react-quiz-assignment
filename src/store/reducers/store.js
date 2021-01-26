@@ -35,7 +35,7 @@ const reducer = ( state = initialState, action ) => {
         case actionTypes.NEXTQUESTION:
           return {
             ...state,
-            currentQuestion: ++action.value,
+            currentQuestion: state.currentQuestion + 1,
             questionAnswered: false
           }
           case actionTypes.SETQUESTIONANSWERED:

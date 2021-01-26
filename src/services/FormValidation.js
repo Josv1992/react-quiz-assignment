@@ -96,7 +96,7 @@ export const FormValidation = ({ initialValues, validate }) => {
   const setGameState = useCallback(
     () => dispatch({type: 'SETGAMESTATE', value: 1}),
     [dispatch],
-    )
+  )
 
   return (
     <>

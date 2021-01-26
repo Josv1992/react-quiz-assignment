@@ -4,6 +4,8 @@ import { useStore, useSelector } from 'react-redux';
 
 import { Welcome } from '../../components/Welcome/Welcome';
 import { Quiz } from '../../components/Quiz/Quiz';
+import { Results } from '../../components/Results/Results';
+import { Leaderboard } from '../../components/Leaderboard/Leaderboard';
 
 export const QuizContainer = () => {
 
@@ -18,6 +20,10 @@ export const QuizContainer = () => {
       return <Welcome />;
     } else if (gameState === 1) {
       return <Quiz score={score} />
+    } else if (gameState === 2) {
+      return <Results />
+    } else {
+      return <Leaderboard />
     }
   }
 
