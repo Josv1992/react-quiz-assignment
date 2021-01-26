@@ -55,8 +55,8 @@ export const Leaderboard = () => {
           <option value="SCORE_DESC">Score (descending)</option>
           <option value="SCORE_ASC">Score (ascending)</option>
           <option disabled>---</option>
-          <option value="NAME_ASC">Name(a-z)</option>
-          <option value="NAME_DESC">Name(z-a)</option>
+          <option value="NAME_ASC">Name (a-z)</option>
+          <option value="NAME_DESC">Name (z-a)</option>
         </select>
       </div>
       <table className="score-table">

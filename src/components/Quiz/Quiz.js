@@ -2,12 +2,12 @@ import React, { useCallback } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import * as actionTypes from '../../store/actionTypes';
 import questionsData from './../../assets/questions.json';
+import './Quiz.css';
 
 
 export const Quiz = () => {
   const questions = questionsData["questions"];
   const score = useSelector(state => state.pReducer.score);
-  const name = useSelector(state => state.pReducer.name);
   const currentQuestion = useSelector(state => state.gReducer.currentQuestion);
   const questionAnswered = useSelector(state => state.gReducer.questionAnswered);
   const answeredCorrectly = useSelector(state => state.gReducer.lastAnswerCorrect);
@@ -60,23 +60,33 @@ export const Quiz = () => {
   const AnswerResult = () => {
     if (questionAnswered) {
       if (answeredCorrectly) {
-        return <h1>Correct answer!</h1>
+        return (<div className="result-section" ><h1>Correct answer!</h1></div>)
       } else {
-        return <h1>Wrong answer</h1>
+        return (<div className="result-section" ><h1>Wrong answer</h1></div>)
       }
     } else {
-      return <></>;
+      return <div className="result-section" ></div>;
     }
   }
 
   return (
   <div>
-    <h1>{name}, you have: {score} points</h1>
+    <div className="question-count">
+      <span>Question {currentQuestion + 1}</span>/{questions.length}
+    </div>
+    {score === 0 &&
+      <h1>Current score: {score} points</h1>
+    }
+    {score > 1 &&
+      <h1>Current score: {score} points</h1>
+    }
+    {score === 1 &&
+      <h1>Current score: {score} point</h1>
+    }
+    
       <AnswerResult />
       <div className="question-section">
-      <div className="question-count">
-        <span>Question {currentQuestion + 1}</span>/{questions.length}
-      </div>
+
       <div className="question-text">
         {questions[currentQuestion].questionText}
       </div>
@@ -85,6 +95,7 @@ export const Quiz = () => {
     <div className="answer-section">
       {questions[currentQuestion].answerOptions.map((answerOption) => (
         <button
+          className="answer-button"
           disabled={questionAnswered}
           key={answerOption.answerText}
           onClick={() => handleAnswerClick(answerOption.isCorrect)}

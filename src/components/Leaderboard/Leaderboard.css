@@ -6,7 +6,7 @@
   width: 500px;
 }
 .score-table td, .score-table th {
-  border: 1px solid #ddd;
+  border: 0px solid;
   padding: 5px;
 }
 
@@ -18,6 +18,6 @@
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #008CBA;
+  background-color: #474747;
   color: white;
 }

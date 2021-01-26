@@ -1,3 +1,27 @@
-.app {
+.quizContainer {
+  background-color: #FECEAB;
   text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 20px;
+  width: 640px;
+  border-radius: 10px;
+}
+
+header {
+  background-color: #E84A5F;
+  border-bottom: 1px solid #FF847C;
+  color: white;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 640px) {
+  .app {
+    width: 500px;
+  }
 }

@@ -25,7 +25,7 @@ export const QuizContainer = () => {
   }
 
   return (
-    <div>
+    <div className="quizContainer">
       <ComponentToggler />
     </div>
   )

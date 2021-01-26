@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
+import { Header } from './components/Header/Header';
 
 import { QuizContainer } from './containers/QuizContainer/QuizContainer';
 
 const App = () => {
   return (
     <div className="app">
-      <QuizContainer />
+      <Header />
+      <QuizContainer className="quizContainer" />
     </div>
   );
 }
