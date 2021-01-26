@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import * as actionTypes from '../../store/actionTypes';
 import questionsData from './../../assets/questions.json';

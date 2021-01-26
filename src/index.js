@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 
+
 import storeReducer from './store/reducers/store';
 
 const rootReducer = combineReducers({
@@ -15,10 +16,10 @@ const rootReducer = combineReducers({
 const store = createStore(rootReducer);
 
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+ReactDOM.render(  
+    <Provider store={store}>
+        <App />
+    </Provider>,
   document.getElementById('root')
 );
 
