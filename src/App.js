@@ -4,6 +4,7 @@ import { Header } from './components/Header/Header';
 
 import { QuizContainer } from './containers/QuizContainer/QuizContainer';
 
+
 const App = () => {
   return (
     <div className="app">
