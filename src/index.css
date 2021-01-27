@@ -13,8 +13,9 @@ code {
     monospace;
 }
 button {
-  background-color: #99B898; /* Green */
+  background-color: #99B898;
   border: 3px solid #99B898;
+  border-bottom: 3px solid #7c947b;
   border-radius: 3px;
   color: black;
   padding: 16px 32px;
@@ -30,8 +31,7 @@ button {
 button:hover {
   background-color: #b2e4b0;
   box-sizing: border-box;
-
-  border: 3px solid #FF847C;
+  border: 3px solid #3cc78d;
 }
 button:disabled {
   background-color: #ccc;

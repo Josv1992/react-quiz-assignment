@@ -16,7 +16,6 @@ export const Form = ({
       <form onSubmit={HandleSubmit} autoComplete="off">
         <div className="form-group">
           <label htmlFor="name-input">
-            Name 
             <input
               type="text"
               className="form-control"

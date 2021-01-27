@@ -57,6 +57,7 @@ export const Quiz = () => {
     }
   }
 
+
   const AnswerResult = () => {
     if (questionAnswered) {
       if (answeredCorrectly) {
@@ -66,6 +67,14 @@ export const Quiz = () => {
       }
     } else {
       return <div className="result-section" ></div>;
+    }
+  }
+
+  const highLightAnswer = (answerCorrect) => {
+    if (questionAnswered && answerCorrect) {
+      return 'highlight-correct'
+    } else if (questionAnswered && !answerCorrect) {
+      return 'highlight-false'
     }
   }
 
@@ -84,18 +93,17 @@ export const Quiz = () => {
       <h1>Current score: {score} point</h1>
     }
     
-      <AnswerResult />
       <div className="question-section">
 
-      <div className="question-text">
+      <h1 className="question-text">
         {questions[currentQuestion].questionText}
-      </div>
+      </h1>
     </div>
 
     <div className="answer-section">
       {questions[currentQuestion].answerOptions.map((answerOption) => (
         <button
-          className="answer-button"
+          className={`answer-button ${highLightAnswer(answerOption.isCorrect)}`}
           disabled={questionAnswered}
           key={answerOption.answerText}
           onClick={() => handleAnswerClick(answerOption.isCorrect)}
@@ -103,7 +111,8 @@ export const Quiz = () => {
           {answerOption.answerText}
         </button>
       ))}
-    </div>
+    </div>    
+      <AnswerResult />
       <NextButton />
   </div>
   )

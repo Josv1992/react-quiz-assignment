@@ -2,3 +2,13 @@
   height: 43px;
   max-height: 43px;
 }
+
+.answer-button.highlight-correct {
+  border: 3px solid #54c054;
+  color: black;
+}
+
+.answer-button.highlight-false {
+  border: 3px solid #E84A5F;
+  color: black;
+}

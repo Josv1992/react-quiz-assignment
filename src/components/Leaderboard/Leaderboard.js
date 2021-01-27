@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import './Leaderboard.css';
-
-
 import firebase from './../../firebase';
 
 const SORT_OPTIONS = {
@@ -22,6 +20,7 @@ const useScores = (sortBy = 'SCORE_DESC') => {
       .firestore()
       .collection('scores')
       .orderBy(SORT_OPTIONS[sortBy].column, SORT_OPTIONS[sortBy].direction)
+      .limit(20)
       .onSnapshot((snapshot) => {
         const newScores = snapshot.docs.map((doc) => ({
           id: doc.id,
